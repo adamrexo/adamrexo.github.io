@@ -1,78 +1,405 @@
-body {
-	margin: 0;
-	padding: 0;
+@font-face {
+    font-family: 'VCR OSD Mono';
+    font-style: normal;
+    font-weight: normal;
+    src: local('VCR OSD Mono'), url('font.woff') format('woff');
 }
 
-.wrapper {
-    position: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-    z-index: 1;
-}
-
-#particles-js {
-    position: absolute;
-    width: 99%;
-    height: 99%;
-    background-color: #ffffff;
-    background-image: url('');
+html, body {
+    color: white;
+    font-family: "VCR OSD Mono";
+    font-weight: 100%;
+    height: 100%;
+    margin: 0;
+    background-image: url(bg.gif);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 50%;
-    z-index: -1;
-  }
+    overflow: hidden;
+}
+
+.flex {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
 
 .content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 50px;
-	border-radius: 10px;
-	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    text-align: center;
+    margin-top: -10%;
 }
 
-.logo-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-    z-index: 1;
+.title {
+    font-size: 80px;
 }
 
-.logo {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	object-fit: cover;
-	margin-bottom: 20px;
-    z-index: 1;
+.sub-title {
+    font-size: 34px;
 }
 
-.name {
-	font-family: sans-serif;
-	font-size: 24px;
-	font-weight: bold;
-	text-align: center;
-	margin-bottom: 10px;
-	color: rgb(0, 0, 0);
-    z-index: 1;
+.links > a {
+    color: white;
+    padding: 0 25px;
+    margin-top: -10%;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s;
 }
 
-.about {
-	font-family: sans-serif;
-	font-size: 16px;
-	text-align: center;
-	margin-bottom: 10px;
-	color: rgb(0, 0, 0);
-    z-index: 1;
+hr {
+    border-style: none; 
+    color: white;
 }
 
-.age {
-	font-family: sans-serif;
-	font-size: 16px;
-	text-align: center;
-	color: rgb(0, 0, 0);
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
     z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+  
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+  
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+  
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+  
+@media screen and (max-height: 450px) {
+    .overlay {overflow-y: auto;}
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+}
+
+.menu-btn {
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.menu-btn > a {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: rgb(255, 179, 79);
+}
+
+/* Discord */
+
+.discord {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.discord-widget {
+    margin: 0px;
+    border: 0px;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.discord-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.discord-widget div,
+.discord-widget span,
+.discord-widget applet,
+.discord-widget object,
+.discord-widget iframe,
+.discord-widget h1,
+.discord-widget h2,
+.discord-widget h3,
+.discord-widget h4,
+.discord-widget h5,
+.discord-widget h6,
+.discord-widget p,
+.discord-widget blockquote,
+.discord-widget pre,
+.discord-widget abbr,
+.discord-widget acronym,
+.discord-widget address,
+.discord-widget big,
+.discord-widget cite,
+.discord-widget code,
+.discord-widget del,
+.discord-widget dfn,
+.discord-widget em,
+.discord-widget img,
+.discord-widget ins,
+.discord-widget kbd,
+.discord-widget q,
+.discord-widget s,
+.discord-widget samp,
+.discord-widget small,
+.discord-widget strike,
+.discord-widget strong,
+.discord-widget sub,
+.discord-widget sup,
+.discord-widget tt,
+.discord-widget var,
+.discord-widget b,
+.discord-widget u,
+.discord-widget i,
+.discord-widget center,
+.discord-widget dl,
+.discord-widget dt,
+.discord-widget dd,
+.discord-widget ol,
+.discord-widget ul,
+.discord-widget li,
+.discord-widget fieldset,
+.discord-widget form,
+.discord-widget label,
+.discord-widget legend,
+.discord-widget table,
+.discord-widget caption,
+.discord-widget tbody,
+.discord-widget tfoot,
+.discord-widget thead,
+.discord-widget tr,
+.discord-widget th,
+.discord-widget td,
+.discord-widget article,
+.discord-widget aside,
+.discord-widget canvas,
+.discord-widget details,
+.discord-widget embed,
+.discord-widget figure,
+.discord-widget figcaption,
+.discord-widget footer,
+.discord-widget header,
+.discord-widget hgroup,
+.discord-widget menu,
+.discord-widget nav,
+.discord-widget output,
+.discord-widget ruby,
+.discord-widget section,
+.discord-widget summary,
+.discord-widget time,
+.discord-widget mark,
+.discord-widget audio,
+.discord-widget video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    margin-bottom: 2px;
+    font-size: 100%;
+    vertical-align: middle;
+}
+
+.discord-widget li {
+    padding-right: 5px;
+    opacity: 0.85;
+}
+
+.discord-widget article,
+.discord-widget aside,
+.discord-widget details,
+.discord-widget figcaption,
+.discord-widget figure,
+.discord-widget footer,
+.discord-widget header,
+.discord-widget hgroup,
+.discord-widget menu,
+.discord-widget nav,
+.discord-widget section {
+    display: block;
+}
+
+.discord-widget body {
+    line-height: 1px;
+}
+
+.discord-widget ol,
+.discord-widget ul {
+    list-style: none;
+}
+
+.discord-widget blockquote,
+.discord-widget q {
+    quotes: none;
+}
+
+.discord-widget blockquote:before,
+.discord-widget blockquote:after,
+.discord-widget q:before,
+.discord-widget q:after {
+    content: '';
+    content: none;
+}
+
+.discord-widget table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+span.discord-error {
+    color: red;
+    font-size: 1.25em;
+}
+
+.discord-title {
+    opacity: 0.85;
+}
+
+.discord-tree {
+    display: block;
+    list-style-type: none !important;
+}
+
+.discord-userlist {
+    padding-left: 10px !important;
+    list-style-type: none !important;
+}
+
+.discord-user {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.discord-user span {
+    font-size: 0.8em;
+    opacity: 0.5;
+}
+
+.discord-user-status {
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    border: 1px solid #3a3a3a !important;
+    width: 10px;
+    height: 10px;
+}
+
+.discord-online {
+    background-color: #43b581;
+}
+
+.discord-idle {
+    background-color: #faa61a;
+}
+
+.discord-dnd {
+    background-color: #e71d1d;
+}
+
+.discord-streaming {
+    background-color: #940b94;
+}
+
+.discord-avatar {
+    border-radius: 100%;
+    display: inline;
+    border: solid 2px #fff !important;
+    border-color: #3a3a3a !important;
+    margin-right: 5px !important;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+}
+
+.discord-users-online {
+    font-size: 14px !important;
+    text-align: right;
+    margin: 10px 10px 0 0 !important;
+    padding-bottom: 15px !important;
+    opacity: 0.85;
+}
+    
+.discord-userlist.discord-allusers {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 250px;
+}
+
+.discord-join {
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #9c9898; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+hr {
+    margin-top: -3px;
+    opacity: 0.7;
+}
+
+.button {
+  margin: 10px;
+  padding: 5px;
+  width: 200px;
+  background-color: rgb(255, 179, 79);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "VCR OSD MONO";
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.button:hover {
+    color: white;
 }

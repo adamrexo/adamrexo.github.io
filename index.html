@@ -1,25 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="cz">
+
 <head>
-	<title>Bustlíme</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <script src="src/particles.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>rexo.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="rexo.">
+    <link rel="stylesheet" href="../maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="particles-js"></div>
-	<div class="wrapper">
-		<div class="content">
-			<div class="logo-container">
-				<img class="logo" src="src/logo.gif">
-				<div class="name">rexo.</div>
-                <div class="about">Student</div>
-				<div class="age">Age: <span id="age"></span></div>
-			</div>
-		</div>
-	</div>
-    <script src="src/particles.min.js"></script>
-    <script src="src/particles.js"></script>
-	<script src="src/script.js"></script>
+<body style="">
+    <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+                <a href="#"><i class="fa fa-home"></i>Home</a>
+        </div>
+    </div>
+
+    <div class="menu-btn"><a href="#" onclick="openNav()"><i class="fa fa-bars"></i>MENU</a></div>
+
+    <div class="flex">
+        <div class="content">
+            <div class="avatar"></div>
+            <br>
+            <span class="title">rexo</span>
+            <br>
+            <span class="sub-title">Student</span>
+            <br>
+            <span class="sub-title"><span id="age"></span></span>
+            <hr>           
+            <div class="links">
+                <a href="mailto:rexosheesh@gmail.com" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true">&nbsp;</i></a>
+                <a href="https://www.instagram.com/rexo_on_grind/" target="_blank"><i class="fa fa-instagram" aria-hidden="true">&nbsp;</i></a>
+                <a href="#" target="_blank"><i class="fa fa-gear" aria-hidden="true">&nbsp;</i></a>
+            </div>
+        </div>
+    </div>   
+    <script src="script.js"></script>
 </body>
 </html>
