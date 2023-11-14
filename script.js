@@ -7,7 +7,7 @@ function closeNav() {
 }
 
 function updateAge() {
-    const birthday = new Date(2007, 3, 18);
+    const birthday = new Date(2007, 4, 18);
     const ageInMilliseconds = Date.now() - birthday.getTime();
     const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
     const age = ageInYears.toFixed(10);
