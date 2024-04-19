@@ -9,8 +9,6 @@ function closeNav() {
 function updateAge() {
     const birthday = new Date(2007, 4, 18);
     const today = new Date();
-
-    console.log(today);
     
     let age = today.getFullYear() - birthday.getFullYear();
     
